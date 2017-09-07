@@ -3,9 +3,9 @@ require 'pry'
 def reformat_languages(languages)
   # your code here
   new_hash = {}
-  languages.each {|oo_or_functional, language_name_list|
-    language_name_list.each {|language_name, data|
-      data.each {|type_key, type_value|
+  languages.each {|oo_or_functional, language_name_list| #oo/functional, list_o_data
+    language_name_list.each {|language_name, data| #language name, {:type => "interpreted/compiled"}
+      data.each {|type_key, type_value| #:type, "interpreted/compiled"
         if new_hash.include?(language_name)
           new_hash[language_name][:style] << oo_or_functional #duplicate language names just need :oo/functional added to :style array. else, make a new one.
         else
